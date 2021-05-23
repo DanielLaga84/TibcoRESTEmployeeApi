@@ -1,0 +1,96 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Resource",
+    "description" : "Resource service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/resource" : {
+      "post" : {
+        "summary" : "postResource",
+        "description" : "postResource",
+        "operationId" : "post-resource",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Employees"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getResource",
+        "description" : "getResource",
+        "operationId" : "get-resource",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Employees to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Employees"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Employee" : {
+      "type" : "object",
+      "required" : [ "EmpAge", "EmpSkills", "EmpName" ],
+      "properties" : {
+        "EmpName" : {
+          "type" : "string"
+        },
+        "EmpAge" : {
+          "type" : "integer"
+        },
+        "EmpDesignation" : {
+          "type" : "string"
+        },
+        "EmpSkills" : {
+          "$ref" : "#/definitions/EmpSkills"
+        }
+      }
+    },
+    "Employees" : {
+      "type" : "object",
+      "required" : [ "Employee" ],
+      "properties" : {
+        "Employee" : {
+          "$ref" : "#/definitions/Employee"
+        }
+      }
+    },
+    "EmpSkills" : {
+      "type" : "object",
+      "required" : [ "SkillName", "SkillID" ],
+      "properties" : {
+        "SkillID" : {
+          "type" : "integer"
+        },
+        "SkillName" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

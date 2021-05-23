@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/TibcoRESTEmployeeApi.module/Service Descriptors/tibcorestemployeeapi.module.Resource-Resource.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/TestSchema"
+}]}
