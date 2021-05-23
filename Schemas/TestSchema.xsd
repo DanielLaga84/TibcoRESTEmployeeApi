@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://www.example.org/TestSchema" 
-xmlns:tns="http://www.example.org/TestSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/TestSchema" elementFormDefault="qualified" targetNamespace="http://www.example.org/TestSchema">
 
 <element name="Employees">
 
@@ -15,18 +13,15 @@ xmlns:tns="http://www.example.org/TestSchema" elementFormDefault="qualified">
 
 <sequence>
 
-<element name="EmpName" type="string"></element>
+<element name="EmpName" type="string"/>
 
-<element name="EmpAge" type="int"></element>
+<element name="EmpAge" type="int"/>
 
-<element name="EmpDesignation" type="string" 
-minOccurs="0">
+<element minOccurs="0" name="EmpDesignation" type="string">
 
 </element>
 
-<element name="EmpSkills"
-
-type="tns:EmpSkillsType">
+<element name="EmpSkills" type="tns:EmpSkillsType">
 
 </element>
 
@@ -46,11 +41,17 @@ type="tns:EmpSkillsType">
 
 <sequence>
 
-<element name="SkillID" type="int"></element>
+<element name="SkillID" type="int"/>
 
-<element name="SkillName" type="string"></element>
+<element name="SkillName" type="string"/>
 
 </sequence>
 
 </complexType>
+    <complexType name="stringArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="string" type="string"/>
+    </sequence>
+  </complexType>
+    <element name="stringArray" type="tns:stringArray"/>
 </schema>
